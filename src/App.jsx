@@ -10,15 +10,16 @@ import Dashboard from "./pages/Dashboard";
 import Cookies from "js-cookie";
 import RequireAuth from "./components/auth/RequireAuth";
 
-import 'react-loading-skeleton/dist/skeleton.css'
+import "react-loading-skeleton/dist/skeleton.css";
 import Foormik from "./pages/Foormik";
 import ReactHookForm from "./pages/ReactHookForm";
 
 function App() {
-  const accessToken = Cookies.get("accessToken");
+  const accessToken = Cookies.get("accessToken")
+    ? Cookies.get("accessToken")
+    : undefined;
   return (
     <>
-
       <Toaster />
       <BrowserRouter>
         <Routes>
@@ -64,9 +65,8 @@ function App() {
             />
           </Route>
           <Route path="*" element={"not found"} />
-          <Route path="/foormik" element={<Foormik/>} />
-          <Route path="/reactHookForm" element={<ReactHookForm/>} />
-        
+          <Route path="/foormik" element={<Foormik />} />
+          <Route path="/reactHookForm" element={<ReactHookForm />} />
         </Routes>
       </BrowserRouter>
     </>
