@@ -2,7 +2,8 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL,
+  // baseURL: import.meta.env.VITE_BASE_URL,
+  baseURL: 'https://authentication-app-ud0k.onrender.com',
   // baseURL: "http://localhost:4000",
   headers: {
     Accept: "application/json",
